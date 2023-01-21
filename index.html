@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="calculator">
+      <div class="console">
+        <div id="secondary"></div>
+        <div id="main"></div>
+      </div>
+      <div class="keys">
+        <div class="column">
+          <div class="key">C</div>
+          <div class="key" onclick="takeNumber('1'), show('1')">1</div>
+          <div class="key" onclick="takeNumber('4'), show('4')">4</div>
+          <div class="key" onclick="takeNumber('7'), show('7')">7</div>
+          <div class="key">+/-</div>
+        </div>
+        <div class="column">
+          <div class="key"></div>
+          <div class="key" onclick="takeNumber('2'), show('2')">2</div>
+          <div class="key" onclick="takeNumber('5'), show('5')">5</div>
+          <div class="key" onclick="takeNumber('8'), show('8')">8</div>
+          <div class="key" onclick="takeNumber('0'), show('0')">0</div>
+        </div>
+        <div class="column">
+          <div class="key" onclick="operation('='), show('=')">=</div>
+          <div class="key" onclick="takeNumber('3'), show('3')">3</div>
+          <div class="key" onclick="takeNumber('6'), show('6')">6</div>
+          <div class="key" onclick="takeNumber('9'), show('9')">9</div>
+          <div class="key">,</div>
+        </div>
+        <div class="column">
+          <div class="key" onclick="erase()">
+            <img src="./assets/excluir.svg" alt="ícone de excluir" />
+          </div>
+          <div class="key" onclick="operation('+'), show('+')">+</div>
+          <div class="key" onclick="show('-'), operation('-')">-</div>
+          <div class="key" onclick="show('x'), operation('x')">x</div>
+          <div class="key" onclick="show('÷'), operation('÷')">÷</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
