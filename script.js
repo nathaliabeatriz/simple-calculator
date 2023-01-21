@@ -2,8 +2,10 @@ let expression = "",
   completeNumber = "",
   operator,
   numberString = "",
-  firstNumber = 0, secondNumber,
-  count = 0
+  firstNumber = 0,
+  secondNumber,
+  count = 0, 
+  count2 = 0
 
 function show(caracter) {
   expression += caracter
@@ -11,27 +13,36 @@ function show(caracter) {
     caracter === "+" ||
     caracter === "-" ||
     caracter === "x" ||
-    caracter === "÷" ||
-    caracter === "="
+    caracter === "÷"
   ) {
+    if(count2 !== 0){
+      expression = firstNumber + caracter
+      count2 = 0
+    }
     document.querySelector("#secondary").innerHTML = expression
     document.querySelector("#main").innerHTML = ""
-    numberString = ""
+    numberString = ''
+    count2++
+  } else if (caracter === "=") {
+    document.querySelector("#secondary").innerHTML = expression
+    document.querySelector("#main").innerHTML = firstNumber
+    expression = firstNumber
   } else {
     numberString += caracter
+    document.querySelector("#main").innerHTML = numberString
   }
-  document.querySelector("#main").innerHTML = numberString
 }
 
 function takeNumber(number) {
-  completeNumber += number
-  console.log(completeNumber)
+  completeNumber += number 
 }
+
 function operation(sign) {
   if (count === 0) {
     operator = sign
     count++
     firstNumber = parseInt(completeNumber)
+    completeNumber = ''
   } else {
     secondNumber = parseInt(completeNumber)
     switch (operator) {
@@ -48,50 +59,13 @@ function operation(sign) {
         firstNumber /= secondNumber
         break
     }
-    document.querySelector("#main").innerHTML = firstNumber
-    expression = firstNumber
+    if (sign === "=") {
+      completeNumber = firstNumber
+    } else {
+      completeNumber = ''
+    }
+    count = 0
   }
-
-  completeNumber = ""
-  // let number = parseInt(completeNumber)
-  // //operator = operador
-  // if (firstNumber != 0) {
-  //   switch (sign) {
-  //     case "+":
-  //       firstNumber += number
-  //       break
-  //     case "-":
-  //       firstNumber -= number
-  //       break
-  //     case "x":
-  //       firstNumber *= number
-  //       break
-  //     case "÷":
-  //       firstNumber /= number
-  //       break
-  //   }
-  // } else {
-  //   firstNumber += number
-  // }
-  // completeNumber = ''
-  // console.log(firstNumber)
 }
 
-// function total() {
-//   let number = parseInt(numberString)
-//   switch (operator) {
-//     case "+":
-//       firstNumber += number
-//       break
-//     case "-":
-//       firstNumber -= number
-//       break
-//     case "x":
-//       firstNumber *= number
-//       break
-//     case "÷":
-//       firstNumber /= number
-//       break
-//   }
-//   document.querySelector(".console").innerHTML = `= ${firstNumber}`
-// }
+//tarefas: mostrar o resultado certo quando houver muitas operações seguidas
