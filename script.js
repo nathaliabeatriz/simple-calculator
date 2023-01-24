@@ -1,71 +1,45 @@
-let expression = "",
-  completeNumber = "",
-  operator,
-  numberString = "",
-  firstNumber = 0,
-  secondNumber,
-  count = 0, 
-  count2 = 0
+let fullExpression = "",
+  number = "",
+  expressionToShow = ""
 
-function show(caracter) {
-  expression += caracter
+function show(character) {
+  expressionToShow += character
   if (
-    caracter === "+" ||
-    caracter === "-" ||
-    caracter === "x" ||
-    caracter === "÷"
+    character === "+" ||
+    character === "-" ||
+    character === "x" ||
+    character === "÷"
   ) {
-    if(count2 !== 0){
-      expression = firstNumber + caracter
-      count2 = 0
-    }
-    document.querySelector("#secondary").innerHTML = expression
+    document.querySelector("#secondary").innerHTML = expressionToShow
     document.querySelector("#main").innerHTML = ""
-    numberString = ''
-    count2++
-  } else if (caracter === "=") {
-    document.querySelector("#secondary").innerHTML = expression
-    document.querySelector("#main").innerHTML = firstNumber
-    expression = firstNumber
-  } else {
-    numberString += caracter
-    document.querySelector("#main").innerHTML = numberString
-  }
-}
-
-function takeNumber(number) {
-  completeNumber += number 
-}
-
-function operation(sign) {
-  if (count === 0) {
-    operator = sign
-    count++
-    firstNumber = parseInt(completeNumber)
-    completeNumber = ''
-  } else {
-    secondNumber = parseInt(completeNumber)
-    switch (operator) {
-      case "+":
-        firstNumber += secondNumber
-        break
-      case "-":
-        firstNumber -= secondNumber
-        break
-      case "x":
-        firstNumber *= secondNumber
-        break
-      case "÷":
-        firstNumber /= secondNumber
-        break
-    }
-    if (sign === "=") {
-      completeNumber = firstNumber
+    number = ""
+    if (character === "x") {
+      fullExpression += "*"
+    } else if (character === "÷") {
+      fullExpression += "/"
     } else {
-      completeNumber = ''
+      fullExpression += character
     }
-    count = 0
+  } else {
+    number += character
+    document.querySelector("#main").innerHTML = number
+    fullExpression += character
   }
 }
 
-//tarefas: mostrar o resultado certo quando houver muitas operações seguidas
+function result() {
+  document.querySelector("#main").innerHTML = eval(fullExpression)
+  expressionToShow += "="
+  document.querySelector("#secondary").innerHTML = expressionToShow
+  expressionToShow = eval(fullExpression).toString()
+  fullExpression = eval(fullExpression).toString()
+}
+
+function eraseTheLastCharacter() {
+  fullExpression = fullExpression.slice(0, -1)
+  expressionToShow = expressionToShow.slice(0, -1)
+  number = number.slice(0, -1)
+  document.querySelector("#main").innerHTML = expressionToShow
+}
+
+//alerta para divisões com 0
