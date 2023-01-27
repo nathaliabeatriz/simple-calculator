@@ -33,7 +33,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 The project is a simple calculator which makes addition, subtraction, division and multiplication operations. The layout is inspired by the Studio Ghibli theme, and it's possible to change the background of the page pressing the Totoro's icon. 
 
-- [Visite o projeto online](https://nathaliabeatriz.github.io/simple-calculator/)
+- [Visit the project online](https://nathaliabeatriz.github.io/simple-calculator/)
 ---
 ## 🔖 Possible changes
 
