@@ -12,47 +12,56 @@
       href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" href="./assets/icon.svg">
   </head>
   <body>
-    <div id="calculator">
-      <div class="console">
-        <div id="secondary"></div>
-        <div id="main"></div>
-      </div>
-      <div class="keys">
-        <div class="column">
-          <div class="key">C</div>
-          <div class="key" onclick="show('1')">1</div>
-          <div class="key" onclick="show('4')">4</div>
-          <div class="key" onclick="show('7')">7</div>
-          <div class="key">+/-</div>
+    <img id="background" src="./assets/backgrounds/background1.jpg" alt="" />
+    <div class="calculator">
+      <img id="logo" src="./assets/logo.svg" alt="Logo">
+      </br>
+      <div id="calculator">
+        <div class="console">
+          <div id="secondary"></div>
+          <div id="main"></div>
         </div>
-        <div class="column">
-          <div class="key"></div>
-          <div class="key" onclick="show('2')">2</div>
-          <div class="key" onclick="show('5')">5</div>
-          <div class="key" onclick="show('8')">8</div>
-          <div class="key" onclick="show('0')">0</div>
-        </div>
-        <div class="column">
-          <div class="key" onclick="result()">=</div>
-          <div class="key" onclick="show('3')">3</div>
-          <div class="key" onclick="show('6')">6</div>
-          <div class="key" onclick="show('9')">9</div>
-          <div class="key">,</div>
-        </div>
-        <div class="column">
-          <div class="key" onclick="eraseTheLastCharacter()">
-            <img src="./assets/excluir.svg" alt="ícone de excluir" />
-          </div>
-          <div class="key" onclick="show('+')">+</div>
-          <div class="key" onclick="show('-')">-</div>
-          <div class="key" onclick="show('x')">x</div>
-          <div class="key" onclick="show('÷')">÷</div>
-        </div>
-      </div>
-    </div>
+        <div class="keys">
+          <div class="column">
+            <div class="key" onclick="changeTheTheme()">
+              <img src="./assets/totoro.png" alt="Muda o background" />
+            </div>
+            <div class="key" onclick="show('7')">7</div>
+            <div class="key" onclick="show('4')">4</div>
+            <div class="key" onclick="show('1')">1</div>
+            <div class="key" onclick="show('0')">0</div>
 
+          </div>
+          <div class="column">
+            <div class="key" onclick="clean()">C</div>
+            <div class="key" onclick="show('8')">8</div>
+            <div class="key" onclick="show('5')">5</div>
+            <div class="key" onclick="show('2')">2</div>
+            <div class="key" onclick="show('x')">x</div>
+          </div>
+          <div class="column">
+            <div class="key" onclick="show('.')">.</div>
+            <div class="key" onclick="show('9')">9</div>
+            <div class="key" onclick="show('6')">6</div>
+            <div class="key" onclick="show('3')">3</div>
+            <div class="key" onclick="show('÷')">÷</div>
+          </div>
+          <div class="column">
+            <div class="key" onclick="eraseTheLastCharacter()">
+              <img src="./assets/excluir.svg" alt="ícone de excluir" />
+            </div>
+            <div class="key" onclick="show('+')">+</div>
+            <div class="key" onclick="show('-')">-</div>
+            <div class="key" id="equalSign" onclick="result()">=</div>          
+          </div>
+        </div>
+      </div>
+    <div id="divGithub">
+      <a href="https://github.com/nathaliabeatriz/simple-calculator" target="_blank"><img id="githubImg" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" /></a>
+    </div>      
     <script src="./script.js"></script>
   </body>
 </html>
