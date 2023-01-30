@@ -23,7 +23,7 @@ Project created to train and develop new habilities in JavaScript and CSS<br/>
 
 ## 🚀 Technologies
 
-Esse projeto foi desenvolvido com as seguintes tecnologias:
+This project was developed with the following technologies:
 
 - HTML
 - CSS
