@@ -1,7 +1,7 @@
 <h1 align="center"> Calculator 🔢</h1>
 
 <p align="center">
-Project created to train and develop new habilities in JavaScript and CSS<br/>
+Project created to train and develop new abilities in JavaScript and CSS<br/>
 </p>
 
 <p align="center">
